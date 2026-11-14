@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Torrens Notes</title>
+
+    <!-- CSS connection -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- JavaScript connection -->
+    <script src="javascript/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="logo">
+            <h2>Torrens Notes</h2>
+        </div>
+
+        <input
+            type="text"
+            id="search-input"
+            placeholder="Search your notes..."
+            aria-label="Search notes"
+        >
+
+        <button id="help-button">Help</button>
+
+    </header>
+
+
+    <!-- Main Layout -->
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <button class="nav-button active" data-view="notes">
+                Notes
+            </button>
+
+            <button class="nav-button" data-view="pinned">
+                Pins
+            </button>
+
+            <button class="nav-button" data-view="archive">
+                Archives
+            </button>
+
+        </aside>
+
+
+        <!-- Content -->
+        <main class="main-content">
+
+            <h1 id="page-title">Notes</h1>
+
+            <!-- New Note -->
+            <section class="note-creator">
+
+                <input
+                    type="text"
+                    id="note-title"
+                    placeholder="Title"
+                    aria-label="Note title"
+                >
+
+                <textarea
+                    id="note-content"
+                    placeholder="Write your note..."
+                    aria-label="Note content"
+                ></textarea>
+
+                <div class="creator-actions">
+
+                    <select id="note-color" aria-label="Note colour">
+                        <option value="white">White</option>
+                        <option value="yellow">Yellow</option>
+                        <option value="green">Green</option>
+                        <option value="blue">Blue</option>
+                        <option value="pink">Pink</option>
+                    </select>
+
+                    <button id="add-note">
+                        Add Note
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Note Sort -->
+            <div class="sort-container">
+
+                <label for="sort-notes">Sort notes:</label>
+
+                <select id="sort-notes">
+                    <option value="newest">Newest first</option>
+                    <option value="oldest">Oldest first</option>
+                    <option value="alphabetical">Alphabetical</option>
+                </select>
+
+            </div>
+
+
+            <!-- Note Display -->
+            <section id="notes-container" aria-label="Your notes">
+
+                <!-- JavaScript will display notes here -->
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- Notification -->
+    <div id="notification" role="status" aria-live="polite"></div>
+
+
+    <!-- Help -->
+    <div id="help-modal" class="modal" hidden>
+
+        <div class="modal-content">
+
+            <button id="close-help" aria-label="Close help guide">
+                &times;
+            </button>
+
+            <h2>Welcome to Torrens Notes!</h2>
+
+            <p>Here are some tips to get started:</p>
+
+            <ul>
+                <li>Create notes using the note creation form.</li>
+                <li>Use different colours to organise information.</li>
+                <li>Pin important notes for quick access.</li>
+                <li>Use the search bar to find specific notes.</li>
+                <li>Archive notes you no longer need in your main view.</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+<!-- Edit Note -->
+<div id="edit-modal" class="modal" hidden>
+
+    <div class="modal-content">
+
+        <h2>Edit Note</h2>
+
+        <label for="edit-title">Note Title</label>
+
+        <input
+            type="text"
+            id="edit-title"
+            placeholder="Enter note title"
+        >
+
+        <label for="edit-content">Note Content</label>
+
+        <textarea
+            id="edit-content"
+            placeholder="Write your note..."
+        ></textarea>
+
+        <label for="edit-color">Note Colour</label>
+
+        <select id="edit-color">
+            <option value="white">White</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="pink">Pink</option>
+        </select>
+
+        <div class="edit-actions">
+
+            <button id="cancel-edit">
+                Cancel
+            </button>
+
+            <button id="save-edit">
+                Save Changes
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

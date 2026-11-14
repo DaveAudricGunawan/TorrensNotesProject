@@ -1,0 +1,520 @@
+
+/* Common Styling */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #202124;
+}
+
+
+/* Header */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: white;
+    padding: 15px 30px;
+
+    border-bottom: 1px solid #ddd;
+    gap: 20px;
+}
+
+.logo h2 {
+    font-size: 22px;
+    color: #333;
+}
+
+#search-input {
+    width: 45%;
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #f1f3f4;
+    font-size: 15px;
+}
+
+#help-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+
+    background-color: #fbbc04;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#help-button:hover {
+    background-color: #f5a900;
+}
+
+
+/* Website Layout */
+
+.app-container {
+    display: flex;
+    min-height: calc(100vh - 70px);
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    width: 220px;
+    padding: 25px 15px;
+
+    background-color: white;
+    border-right: 1px solid #ddd;
+}
+
+.nav-button {
+    display: block;
+    width: 100%;
+
+    padding: 14px;
+    margin-bottom: 10px;
+
+    border: none;
+    border-radius: 0 25px 25px 0;
+
+    background-color: transparent;
+    text-align: left;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #f1f3f4;
+}
+
+.nav-button.active {
+    background-color: #feefc3;
+    font-weight: bold;
+}
+
+
+/* Content */
+
+.main-content {
+    flex: 1;
+    padding: 35px;
+    min-width: 0;
+}
+
+.main-content h1 {
+    margin-bottom: 25px;
+    font-size: 26px;
+}
+
+
+/* New Notes */
+
+.note-creator {
+    max-width: 600px;
+    margin: 0 auto 35px auto;
+
+    padding: 20px;
+
+    background-color: white;
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.note-creator input,
+.note-creator textarea {
+    width: 100%;
+    padding: 12px;
+
+    border: none;
+    outline: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.note-creator textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.creator-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.creator-actions select {
+    padding: 9px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+#add-note {
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 20px;
+
+    background-color: #fbbc04;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#add-note:hover {
+    background-color: #f5a900;
+}
+
+
+/* Sort Notes */
+
+.sort-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.sort-container select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: white;
+}
+
+
+/* Display Grid */
+
+#notes-container {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(220px, 1fr)
+    );
+
+    gap: 20px;
+}
+
+
+/* Cards */
+
+.note-card {
+    padding: 20px;
+    min-height: 150px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+    overflow-wrap: anywhere;
+    position: relative;
+}
+
+.note-card h3 {
+    margin-bottom: 12px;
+    font-size: 17px;
+}
+
+.note-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+.note-card button {
+    padding: 7px 12px;
+    margin-top: 15px;
+    margin-right: 5px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: rgba(255,255,255,0.7);
+    cursor: pointer;
+}
+
+.note-card button:hover {
+    background-color: white;
+}
+
+
+/* Note card colours */
+
+.note-card.white {
+    background-color: white;
+}
+
+.note-card.yellow {
+    background-color: #fff4c2;
+}
+
+.note-card.green {
+    background-color: #d9ead3;
+}
+
+.note-card.blue {
+    background-color: #d2e3fc;
+}
+
+.note-card.pink {
+    background-color: #fce8e6;
+}
+
+
+/* Notification */
+
+#notification {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    padding: 14px 22px;
+
+    background-color: #333;
+    color: white;
+
+    border-radius: 8px;
+
+    display: none;
+    z-index: 10;
+}
+
+
+/* Help Modal */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    background-color: rgba(0,0,0,0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    z-index: 20;
+}
+
+.modal[hidden] {
+    display: none;
+}
+
+.modal-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 450px;
+
+    padding: 30px;
+
+    background-color: white;
+    border-radius: 12px;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+
+.modal-content li {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+#close-help {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+    border: none;
+    background: none;
+
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* Design */
+
+@media (max-width: 768px) {
+
+    .header {
+        flex-wrap: wrap;
+        padding: 15px;
+    }
+
+    #search-input {
+        width: 100%;
+        order: 3;
+    }
+
+    .sidebar {
+        width: 120px;
+        padding: 15px 5px;
+    }
+
+    .nav-button {
+        font-size: 13px;
+        padding: 12px 8px;
+    }
+
+    .main-content {
+        padding: 20px 12px;
+    }
+
+    #notes-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .sidebar {
+        width: 95px;
+    }
+
+    .logo h2 {
+        font-size: 18px;
+    }
+
+    .sort-container {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+}
+
+/* Accessibility (from Assessment 1 suggestions) */
+
+/* Make keyboard navigation easier to see */
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border: 1px solid #9bbcf5;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.12);
+}
+
+/* Improve readability */
+
+body {
+    line-height: 1.5;
+}
+
+/* Make buttons easier to interact with */
+
+button {
+    min-height: 36px;
+}
+
+/* Prevent text from becoming too small */
+
+.note-card p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Improve modal readability */
+
+.modal-content {
+    line-height: 1.6;
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* Note Edit Modal */
+
+#edit-modal .modal-content {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#edit-modal .modal-content h2 {
+    margin-bottom: 5px;
+}
+
+#edit-modal label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#edit-modal input,
+#edit-modal textarea,
+#edit-modal select {
+    width: 100%;
+    padding: 12px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+#edit-modal textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.edit-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.edit-actions button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#cancel-edit {
+    background-color: #eeeeee;
+    color: #333;
+}
+
+#save-edit {
+    background-color: #fbbc04;
+    font-weight: bold;
+}
+
+#cancel-edit:hover {
+    background-color: #dddddd;
+}
+
+#save-edit:hover {
+    background-color: #f5a900;
+}
